@@ -20,4 +20,7 @@ public class AddressBook {
         this.eMail=eMail;
         this.phoneNumber=phoneNumber;
     }
+    public String toString(){
+        return "AddressBook{" + ", firstName='" + firstName + '\''+ ", lastName='" + lastName + '\'' + ", address='" + address + '\'' + ", city='" + city + '\'' + ", state='" + state + '\'' + ", zipCode=" + zipCode + ", eMail='" + eMail + '\'' + ", phoneNumber=" + phoneNumber + '}';
+    }
 }
