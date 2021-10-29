@@ -1,6 +1,9 @@
 package com.bridgelabz;
 
+import java.util.Scanner;
+
 public class AddressBook {
+    Scanner sc=new Scanner(System.in);
     String firstName;
     String lastName;
     String address;
@@ -8,7 +11,7 @@ public class AddressBook {
     String state;
     int zipCode;
     String eMail;
-    int phoneNumber;
+    long phoneNumber;
 
     public AddressBook(String firstName, String lastName, String address, String city, String state, int zipCode, String eMail, int phoneNumber){
         this.firstName=firstName;
