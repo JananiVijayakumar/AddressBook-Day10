@@ -10,9 +10,9 @@ public class MainAddressBook {
         String city=null;
         String state=null;
         int zipCode=0;
-        String eMail=null;
+        String emailId=null;
         long phoneNumber=0;
-        AddressBook adding=new AddressBook(firstName, lastName, address, city, state, zipCode, eMail, (int) phoneNumber);
+        AddressBook adding=new AddressBook(firstName, lastName, address, city, state, zipCode, emailId, (int) phoneNumber);
         ArrayList<AddressBook> fillContact = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         System.out.println(".................Welcome to AddressBook Program...................");
@@ -21,8 +21,6 @@ public class MainAddressBook {
         do {
             System.out.println("1)INSERT");
             System.out.println("2)DISPLAY");
-            System.out.println("3)EDIT");
-            System.out.println("4)DELETE");
             System.out.println("0) EXIT");
             System.out.println("Enter your Choice :");
             choice = sc.nextInt();
@@ -35,16 +33,7 @@ public class MainAddressBook {
                 case 2:
                     adding.display();
                     break;
-
-                case 3:
-                    adding.editing();
-                    break;
-
-                case 4:
-                    adding.deleting();
-                    break;
-
-            }
+                }
         }while (choice !=0);
     }
 }
