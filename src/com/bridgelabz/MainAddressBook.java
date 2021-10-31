@@ -3,38 +3,54 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainAddressBook {
-    public static void main(String[] args) {
-        String firstName=null;
-        String lastName=null;
-        String address=null;
-        String city=null;
-        String state=null;
-        int zipCode=0;
-        String emailId=null;
-        long phoneNumber=0;
-        AddressBook adding=new AddressBook(firstName, lastName, address, city, state, zipCode, emailId, (int) phoneNumber);
-        ArrayList<AddressBook> fillContact = new ArrayList<>();
-        Scanner sc = new Scanner(System.in);
-        System.out.println(".................Welcome to AddressBook Program...................");
+    static final Scanner scanner = new Scanner(System.in);
 
-        int choice;
-        do {
-            System.out.println("1)INSERT");
-            System.out.println("2)DISPLAY");
-            System.out.println("0) EXIT");
-            System.out.println("Enter your Choice :");
-            choice = sc.nextInt();
-
-            switch (choice) {
-                case 1:
-                    adding.addContact();
+    public static void main(String[] args) throws Exception
+    {
+        AddressBook addressBook = new AddressBook();
+        while (true)
+        {
+            System.out.println(".......................................");
+            System.out.println("--------------ENTER-------------");
+            System.out.println("c for creating a new contact");
+            System.out.println("f for filling contact details");
+            System.out.println("p for printing all contacts");
+            System.out.println("v for viewing  contact information");
+            System.out.println("e for editing contact information");
+            System.out.println("d for deleting contact information");
+            System.out.println("q for quitting");
+            System.out.print("Enter option : ");
+            String option = scanner.nextLine().trim().toLowerCase();
+            switch (option)
+            {
+                case "c":
+                    addressBook.createNewContact();
                     break;
-
-                case 2:
-                    adding.display();
+                case "f":
+                    addressBook.fillContactDetails();
                     break;
-                }
-        }while (choice !=0);
+                case "p":
+                    addressBook.displayAllContacts();
+                    break;
+                case "v":
+                    addressBook.viewContactInfo();
+                    break;
+                case "e":
+                    addressBook.editContactInfo();
+                    break;
+                case "d":
+                    addressBook.deleteContact();
+                    break;
+                case "q":
+                    System.out.println("quiting....!");
+                    System.exit(0);
+                default:
+                    System.out.println("please enter the correct choice : ");
+                    break;
+            }
+
+        }
+
     }
 }
 
